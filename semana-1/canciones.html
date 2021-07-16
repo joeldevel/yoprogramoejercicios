@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+    body {
+      font-family: sans-serif;
+    }
+    table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table tr:nth-child(even){background-color: #f2f2f2;}
+
+  table tr:hover {background-color: #ddd;}
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <p>
+      Emilia tiene su biblioteca de canciones en formato mp3, y por cada canción posee su título, autor, duración (en segundos) y el género musical al que pertenece.
+      Emilia tiene curiosidad por saber los siguientes datos de su colección:
+    </p>
+    <ul>
+      <li>
+        ¿Cuál es la canción más larga?
+      </li>
+      <li>
+        ¿Cuántas canciones tiene por género? ¿Y por autor?
+      </li>
+      <li>
+        ¿De qué autor tiene más canciones?
+      </li>
+      <li>
+        ¿Cuántas horas de música tiene en total?
+      </li>
+    </ul>
+
+
+    <p>
+      Para ello nos pidió ayuda, ya que sabe que nos damos maña con la programación. ¿Podrían sugerir una forma de responder cada una de estas preguntas? Pueden hacerlo coloquialmente, como pseudocódigo, o también proporcionando un programa en el lenguaje de su preferencia.
+    </p>
+    <table class="lista-canciones">
+      <thead>
+        <tr>
+          <th>titulo</th>
+          <th>autor</th>
+          <th>duracion</th>
+          <th>genero</th>
+        </tr>
+        <tbody class="lista-body">
+
+        </tbody>
+      </thead>
+    </table>
+    <h3>Ver la consola</h3>
+
+  <script type="text/javascript" src="canciones.js">
+
+  </script>
+  </body>
+</html>
