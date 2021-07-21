@@ -60,7 +60,7 @@ public class TestCirculo {
     }
 
     @Test
-    public void testIntersectaConCirculoEnDosPuntos() {
+    public void testIntersectaConCirculoEnMasDeUnPunto() {
         Circulo circulo2 = new Circulo(new Punto(0, 3), 2);
         boolean expected = true;
         boolean actual = circulo.intersectaCon(circulo2);
