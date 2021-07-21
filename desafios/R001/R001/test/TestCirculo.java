@@ -1,5 +1,4 @@
 
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -7,10 +6,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
 public class TestCirculo {
-    
-   Circulo circulo;
+
+    Circulo circulo;
     Punto centro;
 
     @Before
@@ -46,6 +44,14 @@ public class TestCirculo {
     }
 
     @Test
+    public void testIntersectaConCirculoInterno() {
+        Circulo circulo2 = new Circulo(new Punto(0, 1), 1);
+        boolean expected = true;
+        boolean actual = circulo.intersectaCon(circulo2);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testIntersectaConCirculoEnUnPunto() {
         Circulo circulo2 = new Circulo(new Punto(0, 4), 2);
         boolean expected = true;
@@ -62,9 +68,9 @@ public class TestCirculo {
     }
 
     @Test
-    public void testNoIntersectaConCirculoInterno() {
+    public void testIntersectaConCirculoInternoMismoCentro() {
         Circulo circulo2 = new Circulo(new Punto(0, 0), 1);
-        boolean expected = false;
+        boolean expected = true;
         boolean actual = circulo.intersectaCon(circulo2);
         assertEquals(expected, actual);
     }
@@ -75,6 +81,38 @@ public class TestCirculo {
         boolean expected = false;
         boolean actual = circulo.intersectaCon(circulo2);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testDistanciaACirculoMismoCentro() {
+        Circulo circulo2 = new Circulo(new Punto(0, 0), 2);
+        double expected = 0.0;
+        double actual = circulo.distanciaA(circulo2);
+        assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void testDistanciaACirculoIgualA1() {
+        Circulo circulo2 = new Circulo(new Punto(1, 0), 2);
+        double expected = 1.0;
+        double actual = circulo.distanciaA(circulo2);
+        assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void testDistanciaACirculoIgualA2() {
+        Circulo circulo2 = new Circulo(new Punto(2, 0), 2);
+        double expected = 2.0;
+        double actual = circulo.distanciaA(circulo2);
+        assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void testDistanciaACirculoIgualARaizDe2() {
+        Circulo circulo2 = new Circulo(new Punto(Math.sqrt(2.0), 0), 20);
+        double expected = Math.sqrt(2.0);
+        double actual = circulo.distanciaA(circulo2);
+        assertEquals(expected, actual, 0.001);
     }
 
 }

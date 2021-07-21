@@ -29,20 +29,8 @@ public class Circulo {
      * @return true o false segun sea el caso
      */
     public boolean intersectaCon(Circulo c2) {
-        // son el mismo circulo, infinitos puntos
-        if (this.centro.esIgualA(c2.getCentro()) && this.radio == c2.getRadio()) {
-//            System.out.println("son iguales");
-            return true;
-        }
-
-        if (this.distanciaA(c2) <= this.radio + c2.getRadio()) {
-            if (this.distanciaA(c2) > (this.radio + c2.getRadio())
-                    || (this.distanciaA(c2) < Math.abs(this.getRadio() - c2.getRadio()))) {
-                return false;
-            }
-            return true;
-        }
-        return false;
+        
+        return  (this.radio + c2.getRadio()) >= this.distanciaA(c2);
     }
 
     /**
@@ -51,12 +39,11 @@ public class Circulo {
      * @param c2 un objeto de tipo Circulo
      * @return double con la distancia entre los centros
      */
-    private double distanciaA(Circulo c2) {
+    protected double distanciaA(Circulo c2) {
 
         double distancia = Math.sqrt(
                 Math.pow(c2.getCentro().getX() - this.getCentro().getX(), 2)
                 + Math.pow(c2.getCentro().getY() - this.getCentro().getY(), 2));
-//        System.out.println("distancia= " + distancia);
         return distancia;
     }
 }
