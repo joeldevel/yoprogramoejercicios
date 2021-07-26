@@ -1,5 +1,4 @@
 
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,11 +39,10 @@ public class TestPunto {
         assertEquals(expectedX, actualX, 1);
         assertEquals(expectedY, actualY, 1);
     }
-    
+
     @Test
     public void testEstaSobreEjeX() {
         Punto p = new Punto(5, 0);
-        
         assertTrue(p.estaSobreEjeX());
     }
 
@@ -52,28 +50,27 @@ public class TestPunto {
     public void testNoEstaSobreEjeX() {
         assertFalse(punto.estaSobreEjeX());
     }
-    
+
     @Test
     public void testEstaSobreEjeY() {
-        Punto p = new Punto(0, 5);   
+        Punto p = new Punto(0, 5);
         assertTrue(p.estaSobreEjeY());
     }
-    
+
     @Test
     public void testNoEstaSobreEjeY() {
         assertFalse(punto.estaSobreEjeY());
     }
-    
+
     @Test
     public void testEsElOrigen() {
         Punto p = new Punto(0, 0);
-        
         assertTrue(p.esElOrigen());
     }
-    
+
     @Test
     public void testNoEsElOrigen() {
         assertFalse(punto.esElOrigen());
     }
-    
+
 }
