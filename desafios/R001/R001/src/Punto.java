@@ -15,6 +15,26 @@ public class Punto {
     public double getY() {
         return this.y;
     }
+    
+    public void setX(double x) {
+        this.x = x;
+    }
+    
+    public void setY(double y) {
+        this.y = y;
+    }
+    
+    public boolean estaSobreEjeX() {
+        return this.y == 0;
+    }
+    
+    public boolean estaSobreEjeY() {
+        return this.x == 0;
+    }
+    
+    public boolean esElOrigen() {
+        return this.estaSobreEjeX() && this.estaSobreEjeY();
+    }
 
     /**
      * Verifica si el Punto provisto tiene el centro y radio iguales o no
