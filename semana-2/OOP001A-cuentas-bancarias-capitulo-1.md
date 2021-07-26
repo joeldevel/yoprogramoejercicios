@@ -7,7 +7,7 @@ Debe poderse resolver la siguiente secuencia de acciones:
 2. Acreditación de $ 1000, saldo == 1000.
 3. Retiro de $ 550, saldo == 450.
 
-```
+```java
     // main
     Cuenta miCuenta = new Cuenta();
     System.out.println(miCuenta.saldo); // 0

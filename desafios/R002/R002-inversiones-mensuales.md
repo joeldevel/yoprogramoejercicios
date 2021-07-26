@@ -14,7 +14,7 @@ Este método se encargará de calcular la inversión y mostrar para cada uno de 
 
 ### Ejemplo 1
 Entrada:
-```
+```java
     montoInverir = 1000
     interesAnual = 0.24
     cantidadAñosMaximo = 4
@@ -22,7 +22,7 @@ Entrada:
 
 Salida:
 
-```
+```java
     1268.2418
     1608.4372
     2039.8873
@@ -32,14 +32,14 @@ Salida:
 ### Ejemplo 2
 Entrada:
 
-```
+```java
     montoInverir = 1000
     interesAnual = 0.71355714
     cantidadAñosMaximo = 5
 ```
 
 Salida:
-```
+```java
     2000
     4000.0001
     8000.0002
@@ -55,20 +55,20 @@ El otro se encargará de calcular y mostrar cuanto tiempo (en meses) se necesita
 
 ### Ejemplo 1
 Entrada:
-```
+```java
     montoInvertir = 1000
     interesAnual = 0.07
     saldoFinalDeseado = 2000
 ```
 Salida:
-``` 
+``` java
     120
 ```
 
 ### Ejemplo 2
 Entrada:
 
-```
+```java
     montoInvertir = 1000
     interesAnual = 0.24
     saldoFinalDeseado = 2587
@@ -76,6 +76,6 @@ Entrada:
 
 Salida:
 
-```
+```java
     48
 ```
