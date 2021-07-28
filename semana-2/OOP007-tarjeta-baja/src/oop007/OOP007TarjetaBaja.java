@@ -1,4 +1,4 @@
-package oop007.tarjeta.baja;
+package oop007;
 
 public class OOP007TarjetaBaja {
 
