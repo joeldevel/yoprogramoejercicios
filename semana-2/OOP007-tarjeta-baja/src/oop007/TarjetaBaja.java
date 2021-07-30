@@ -2,15 +2,13 @@ package oop007;
 
 public class TarjetaBaja {
 
-    private double saldo;
-    
-    
-
     /**
      * post: saldo de la Tarjeta en saldoInicial.
      */
     public TarjetaBaja(double saldoInicial) {
         this.saldo = saldoInicial;
+        this.viajesEnColectivo = 0;
+        this.viajesEnSubte = 0;
     }
 
     /**
@@ -32,6 +30,8 @@ public class TarjetaBaja {
      * colectivo.
      */
     public void pagarViajeEnColectivo() {
+        this.pagarViaje(PrecioViaje.COLECTIVO.getPrecio());
+        this.viajesEnColectivo = this.aumentarCantidadViaje(this.contarViajesEnColectivo());
     }
 
     /**
@@ -39,26 +39,57 @@ public class TarjetaBaja {
      * subte.
      */
     public void pagarViajeEnSubte() {
+        this.pagarViaje(PrecioViaje.SUBTE.getPrecio());
+        this.viajesEnSubte = this.aumentarCantidadViaje(this.contarViajesEnSubte());
     }
 
     /**
      * post: devuelve la cantidad de viajes realizados.
      */
     public int contarViajes() {
-        return 0;
+        return this.contarViajesEnColectivo() + this.contarViajesEnSubte();
     }
 
     /**
      * post: devuelve la cantidad de viajes en colectivo.
      */
     public int contarViajesEnColectivo() {
-        return 0;
+        return this.viajesEnColectivo;
     }
 
     /**
      * post: devuelve la cantidad de viajes en subte.
      */
     public int contarViajesEnSubte() {
-        return 0;
+        return this.viajesEnSubte;
     }
+
+    //    medotos auxiliares
+    
+    private void pagarViaje(double costoViaje) {
+        if (this.hayDineroDisponible(costoViaje)) {
+            this.setSaldo(this.obtenerSaldo() - costoViaje);
+        } else {
+            throw new Error("No hay saldo suficiente");
+        }
+    }
+
+    private int aumentarCantidadViaje(int medioViaje) {
+        return ++medioViaje;
+    }
+
+    private void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    private boolean hayDineroDisponible(double cantidad) {
+        return this.saldo >= cantidad;
+    }
+
+    
+
+    private double saldo;
+
+    private int viajesEnSubte, viajesEnColectivo;
 }
+
