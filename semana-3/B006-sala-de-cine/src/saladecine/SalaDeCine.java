@@ -5,6 +5,7 @@ public class SalaDeCine {
     
     private Butaca butacas[][];
     private int butacasOcupadas = 0;
+    
 //     Crearla con la cantidad de butacas totales, y cantidad de filas    
     public SalaDeCine(int butacas, int filas) {
     }
