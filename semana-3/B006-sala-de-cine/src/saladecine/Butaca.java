@@ -3,6 +3,10 @@ package saladecine;
 public class Butaca {
 
     private boolean ocupada = false;
+    
+//    public Butaca() {
+//        this.ocupada = false;
+//    }
 
     public boolean ocupar() {
         if (this.estaOcupada()) {
