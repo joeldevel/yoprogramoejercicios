@@ -1,9 +1,11 @@
+package oop001c;
+
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
-import oop001a.*;
 
 public class CuentaBancariaTest {
 
@@ -48,18 +50,18 @@ public class CuentaBancariaTest {
         cuenta1.retirarDinero(50);
         assertEquals(50.0, cuenta1.getSaldo(), delta);
     }
-    
-    @Test(expected = Error.class) 
+
+    @Test(expected = Error.class)
     public void tiraErrorAlIntentarIngresarCantidadNegativa() {
         cuenta1.ingresarDinero(-1);
     }
-    
-    @Test(expected = Error.class) 
+
+    @Test(expected = Error.class)
     public void tiraErrorAlIntentarRetirarCantidadNegativa() {
         cuenta1.retirarDinero(-1);
     }
-    
-    @Test(expected = Error.class) 
+
+    @Test(expected = Error.class)
     public void tiraErrorAlIntentarRetirarCantidadMayorAlSaldo() {
         cuenta1.retirarDinero(1);
     }
