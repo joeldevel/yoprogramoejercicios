@@ -9,16 +9,13 @@ import static org.junit.Assert.*;
 
 public class CuentaBancariaTest {
 
-    Cuenta cuenta1;
+    Cuenta cuenta1, cuenta2;
     double delta = 0.001;
 
     @Before
     public void setUp() {
         cuenta1 = new Cuenta();
-    }
-
-    @After
-    public void tearDown() {
+        cuenta2 = new Cuenta();
     }
 
     @Test
@@ -64,5 +61,13 @@ public class CuentaBancariaTest {
     @Test(expected = Error.class)
     public void tiraErrorAlIntentarRetirarCantidadMayorAlSaldo() {
         cuenta1.retirarDinero(1);
+    }
+    
+    @Test
+    public void puedeTransferirSiHaySaldoSuficiente() {
+        cuenta1.ingresarDinero(10000);
+        assertTrue(cuenta1.transferir(550, cuenta2));
+        assertEquals(9450, cuenta1.getSaldo(), delta);
+        assertEquals(550, cuenta2.getSaldo(), delta);
     }
 }
