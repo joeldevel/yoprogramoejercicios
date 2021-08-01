@@ -1,9 +1,6 @@
 package oop001c;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -62,12 +59,22 @@ public class CuentaBancariaTest {
     public void tiraErrorAlIntentarRetirarCantidadMayorAlSaldo() {
         cuenta1.retirarDinero(1);
     }
-    
+
     @Test
     public void puedeTransferirSiHaySaldoSuficiente() {
         cuenta1.ingresarDinero(10000);
-        assertTrue(cuenta1.transferir(550, cuenta2));
+        assertEquals(10000, cuenta1.getSaldo(), delta);
+        assertEquals(0, cuenta2.getSaldo(), delta);
+        assertTrue(cuenta1.transferir(cuenta2, 550));
         assertEquals(9450, cuenta1.getSaldo(), delta);
         assertEquals(550, cuenta2.getSaldo(), delta);
+    }
+
+    @Test(expected = Error.class)
+    public void noPuedeTransferirSiNoHaySaldoSuficiente() {
+        cuenta1.ingresarDinero(0);
+        assertTrue(cuenta1.transferir(cuenta2, 550));
+        assertNotEquals(9450, cuenta1.getSaldo(), delta);
+        assertNotEquals(550, cuenta2.getSaldo(), delta);
     }
 }

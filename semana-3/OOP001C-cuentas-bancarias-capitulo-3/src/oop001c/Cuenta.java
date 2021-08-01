@@ -46,8 +46,8 @@ public class Cuenta {
         return cantidad >= 0;
     }
 
-    public boolean transferir(double cantidadATransferir, Cuenta destinoTransferencia) {
-        destinoTransferencia.ingresarDinero(this.getSaldo()- this.retirarDinero(cantidadATransferir));
+    public boolean transferir(Cuenta destinoTransferencia, double cantidadATransferir) {
+        destinoTransferencia.ingresarDinero(this.getSaldo() - this.retirarDinero(cantidadATransferir));
         return true;
     }
 }
