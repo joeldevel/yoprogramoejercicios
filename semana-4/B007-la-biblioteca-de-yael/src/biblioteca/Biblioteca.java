@@ -28,6 +28,7 @@ public class Biblioteca {
 		}
 		return libroRepetido;
 	}
+        
 	public void ordenar() {
 		 Arrays.sort(libros);
 	}
