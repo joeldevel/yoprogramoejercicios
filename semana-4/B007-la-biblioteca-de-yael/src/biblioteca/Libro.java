@@ -63,6 +63,7 @@ public class Libro implements Cloneable {
         return true;
     }
 
+    @Override
     public Libro clone() throws CloneNotSupportedException {
         return (Libro) super.clone();
     }
@@ -88,8 +89,8 @@ public class Libro implements Cloneable {
     }
 
     public String normalizarTitulo() {
-        String[] palabrasEnTitulo = this.getTitulo().trim().split(" ");
-        System.out.println(palabrasEnTitulo[0]);
+        String[] palabrasEnTitulo = this.getTitulo().split(" ");
+        
         if(!this.comienzaConArticulo(palabrasEnTitulo[0])) {
             return this.getTitulo();
         }
