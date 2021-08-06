@@ -6,6 +6,7 @@ public class Biblioteca {
 
     private Libro[] libros;
     private int cantidadLibros;
+    private int[][] librosPorGenero = new int[Genero.values().length][2];
 
     public Libro getLibro(int indice) {
         return libros[indice];
@@ -18,6 +19,13 @@ public class Biblioteca {
     public Biblioteca(int tamanioBiblioteca) {
         libros = new Libro[tamanioBiblioteca];
         cantidadLibros = 0;
+        Genero[] codigoGeneros = Genero.values();
+//        System.out.println(librosPorGenero.length);
+        for(int i=0; i< librosPorGenero.length; i++) {
+            librosPorGenero[i][0] = codigoGeneros[i].ordinal();
+//            System.out.println(librosPorGenero[i][0]);
+        }
+//        
     }
 
     public void agregarLibro(Libro libro) {
@@ -26,6 +34,7 @@ public class Biblioteca {
         }
         libros[this.cantidadLibros] = libro;
         this.cantidadLibros++;
+        librosPorGenero[libro.getGenero().ordinal()][1]++;
     }
 
     public boolean libroRepetido(Libro libro) {
@@ -36,6 +45,13 @@ public class Biblioteca {
             indice++;
         }
         return libroRepetido;
+    }
+    
+    public void cantidadLibrosPorGenero() {
+        for(int i=0; i<librosPorGenero.length; i++) {
+            if(librosPorGenero[i][1] == 0) continue;
+            System.out.println(Genero.values()[i].name() + " " + librosPorGenero[i][1]);
+        }
     }
 
     public void ordenar() {

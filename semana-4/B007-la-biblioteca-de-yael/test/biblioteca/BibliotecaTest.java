@@ -94,5 +94,10 @@ public class BibliotecaTest {
         assertEquals("Dundy", b.getLibro(2).getApellidoAutor());
         assertEquals("Borges", b.getLibro(3).getApellidoAutor());
     }
+    
+   @Test
+   public void cantidadDeLibrosPorGenero() {
+       b2.cantidadLibrosPorGenero();
+   }
 
 }
