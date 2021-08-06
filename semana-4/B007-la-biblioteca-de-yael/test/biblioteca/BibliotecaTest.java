@@ -18,33 +18,41 @@ public class BibliotecaTest {
         libro2 = new Libro("Maru", "Botana", 250, "Todo dulce", 2005, Genero.COCINA);
         libro3 = new Libro("Elaine", "Dundy", 120, "Te quiero verde", 1968, Genero.NOVELA);
         b = new Biblioteca(4);
-        
+
         b.agregarLibro(libro3);
         b.agregarLibro(libro1);
         b.agregarLibro(libro2);
         b.agregarLibro(libro);
     }
-    
+
     @Test
     public void bibliotecaCreadaNoEsNull() {
         assertNotNull(b);
     }
-    
+
     @Test
     public void bibliotecaContiene4LibrosAgregados() {
         assertEquals(4, b.getCantidadLibros());
     }
-    
+
     @Test
     public void ordenaPorAutor() {
         b.ordenarPorApellido();
-        
+
         assertEquals("Borges", b.getLibro(0).getApellidoAutor());
         assertEquals("Botana", b.getLibro(1).getApellidoAutor());
         assertEquals("Cervantes", b.getLibro(2).getApellidoAutor());
         assertEquals("Dundy", b.getLibro(3).getApellidoAutor());
-        
-        
+    }
+
+    @Test
+    public void ordenaPorTitulo() {
+        b.ordenarPorTitulo();
+        // c Bor dun bot
+        assertEquals("Cervantes", b.getLibro(0).getApellidoAutor());
+        assertEquals("Borges", b.getLibro(1).getApellidoAutor());
+        assertEquals("Dundy", b.getLibro(2).getApellidoAutor());
+        assertEquals("Botana", b.getLibro(3).getApellidoAutor());
     }
 
 }
