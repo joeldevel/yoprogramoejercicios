@@ -19,14 +19,6 @@ public class Libro implements Cloneable {
         this.genero = genero;
     }
 
-    public static void main(String[] args) {
-        Libro libro = new Libro("Jose", "bolainas", 100, "Novelas", 1458, Genero.FANTASIA);
-        Libro libro1 = new Libro("Jose", "pirincho", 10, "Novelas", 1658, Genero.TERROR);
-        System.out.println(libro.equals(libro1));
-        System.out.println(libro.hashCode());
-        System.out.println(libro1.hashCode());
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
