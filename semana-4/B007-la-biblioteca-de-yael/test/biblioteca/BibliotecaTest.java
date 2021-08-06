@@ -57,7 +57,7 @@ public class BibliotecaTest {
 
     @Test
     public void ordenaPorAnioPublicacionTest() {
-        b.ordenarPorTitulo();
+        b.ordenarPorAnioPublicacion();
         // c Bor dun bot
         assertEquals("Cervantes", b.getLibro(0).getApellidoAutor());
         assertEquals("Borges", b.getLibro(1).getApellidoAutor());
