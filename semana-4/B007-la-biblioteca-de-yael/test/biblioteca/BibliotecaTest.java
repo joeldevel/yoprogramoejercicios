@@ -66,13 +66,13 @@ public class BibliotecaTest {
 
     @Test
     public void ordenaPorTituloNormalizadoTest() {
-        b.ordenarPorTituloNormalizado();
+        b2.ordenarPorTituloNormalizado();
         // burdunda bor cer dun bot
-        assertEquals("Burdunga", b.getLibro(0).getApellidoAutor());
-        assertEquals("Borges", b.getLibro(1).getApellidoAutor());
-        assertEquals("Cervantes", b.getLibro(2).getApellidoAutor());
-        assertEquals("Dundy", b.getLibro(3).getApellidoAutor());
-        assertEquals("Botana", b.getLibro(4).getApellidoAutor());
+        assertEquals("Burdunga", b2.getLibro(0).getApellidoAutor());
+        assertEquals("Borges", b2.getLibro(1).getApellidoAutor());
+        assertEquals("Dundy", b2.getLibro(2).getApellidoAutor());
+        assertEquals("Botana", b2.getLibro(3).getApellidoAutor());
+        assertEquals("Cervantes", b2.getLibro(4).getApellidoAutor());
     }
 
     @Test
