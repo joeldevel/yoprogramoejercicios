@@ -6,6 +6,10 @@ public class Biblioteca {
 
     private Libro[] libros;
     private int cantidadLibros;
+    
+    public Libro getLibro(int indice) {
+        return libros[indice];
+    }
 
     public int getCantidadLibros() {
         return cantidadLibros;
@@ -36,6 +40,9 @@ public class Biblioteca {
 
     public void ordenar() {
         Arrays.sort(libros);
+    }
+    public void ordenarPorApellido() {
+        Arrays.sort(libros, new ComparadorPorApellido());
     }
 
 }
