@@ -19,10 +19,12 @@ public class AlmacenPagoTest {
     public void valorFuturoTest() {
         assertEquals(1268.2417945625455, almacen.calcularVFPeriodo(1000, 0.24, 1), 0);
     }
-    
+
     @Test
     public void mostrarValorFuturo4PeriodosTest() {
         almacen.mostrarVF(1000, 0.24, 4);
+        System.out.println("---");
+//        almacen.mostrarVF(1000,  0.71355714, 5);
     }
 
 }
