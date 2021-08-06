@@ -4,17 +4,18 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import biblioteca.Libro;
-import biblioteca.Genero;
+import biblioteca.*;
 
 public class LibroTest {
 
-    Libro libro, libro1;
+    Libro libro, libro1, libro2, libro3;
 
     @Before
     public void setUp() {
         libro = new Libro("jorge luis", "borges", 100, "Ficciones", 1939, Genero.FANTASIA);
         libro1 = new Libro("miguel de", "Cervantes", 1000, "El ingenioso hidalgo don Quijote de la Mancha", 1490, Genero.NOVELA);
+        libro2 = new Libro("Maru", "Botana", 250, "Todo dulce", 2005, Genero.COCINA);
+        libro3 = new Libro("Elaine", "Dundy", 120, "Te quiero verde", 1968, Genero.NOVELA);
     }
 
     @Test
@@ -24,7 +25,7 @@ public class LibroTest {
 
     @Test
     public void libroCreadoTieneDatosBien() {
-        assertEquals("jorge luis", libro.getNombreAutor());
+        assertEquals("jorge luis", libro.getNombresAutor());
         assertEquals(100, (int) libro.getPaginas());
         assertEquals("Ficciones", libro.getTitulo());
         assertEquals(1939, libro.getAnioPublicacion());
@@ -39,4 +40,12 @@ public class LibroTest {
         assertEquals("secreto, El", libro.normalizarTitulo());
     }
 
+    @Test
+    public void formateaAPA() {
+        String libroEnAPA = "Borges, J. L. (1939). Ficciones";
+        assertEquals(libroEnAPA, libro.formatoAPA());
+    }
+
+//    @Test
+//    public void 
 }

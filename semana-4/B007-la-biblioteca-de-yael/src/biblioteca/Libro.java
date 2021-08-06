@@ -2,7 +2,7 @@ package biblioteca;
 
 public class Libro implements Cloneable {
 
-    private String nombreAutor;
+    private String nombresAutor;
     private int paginas;
     private String titulo;
     private int anioPublicacion;
@@ -10,8 +10,8 @@ public class Libro implements Cloneable {
     private static final int CARACTERES_MAXIMO = 200;
     private String apellidoAutor;
 
-    public Libro(String nombreAutor, String apellidoAutor, int paginas, String titulo, int anioPublicacion, Genero genero) {
-        this.nombreAutor = nombreAutor;
+    public Libro(String nombresAutor, String apellidoAutor, int paginas, String titulo, int anioPublicacion, Genero genero) {
+        this.nombresAutor = nombresAutor;
         this.apellidoAutor = apellidoAutor;
         this.paginas = paginas;
         this.titulo = titulo;
@@ -21,7 +21,7 @@ public class Libro implements Cloneable {
 
     public static void main(String[] args) {
         Libro libro = new Libro("Jose", "bolainas", 100, "Novelas", 1458, Genero.FANTASIA);
-        Libro libro1 = new Libro("Jose", "pirinicho", 10, "Novelas", 1658, Genero.TERROR);
+        Libro libro1 = new Libro("Jose", "pirincho", 10, "Novelas", 1658, Genero.TERROR);
         System.out.println(libro.equals(libro1));
         System.out.println(libro.hashCode());
         System.out.println(libro1.hashCode());
@@ -31,7 +31,7 @@ public class Libro implements Cloneable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((nombreAutor == null) ? 0 : nombreAutor.hashCode());
+        result = prime * result + ((nombresAutor == null) ? 0 : nombresAutor.hashCode());
         result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
         return result;
     }
@@ -48,11 +48,11 @@ public class Libro implements Cloneable {
             return false;
         }
         Libro other = (Libro) obj;
-        if (nombreAutor == null) {
-            if (other.nombreAutor != null) {
+        if (nombresAutor == null) {
+            if (other.nombresAutor != null) {
                 return false;
             }
-        } else if (!nombreAutor.equals(other.nombreAutor)) {
+        } else if (!nombresAutor.equals(other.nombresAutor)) {
             return false;
         }
         if (titulo == null) {
@@ -78,8 +78,8 @@ public class Libro implements Cloneable {
         return anioPublicacion;
     }
 
-    public String getNombreAutor() {
-        return this.nombreAutor;
+    public String getNombresAutor() {
+        return this.nombresAutor;
     }
 
     public String getTitulo() {
@@ -88,6 +88,10 @@ public class Libro implements Cloneable {
 
     public Genero getGenero() {
         return this.genero;
+    }
+
+    public String getApellidoAutor() {
+        return apellidoAutor;
     }
 
     public String normalizarTitulo() {
@@ -102,6 +106,19 @@ public class Libro implements Cloneable {
         }
         tituloNormalizado = tituloNormalizado.trim().concat(", " + palabrasEnTitulo[0]);
         return tituloNormalizado;
+    }
+
+    public String formatoAPA() {
+        String[] nombres = this.getNombresAutor().split(" ");
+//        Becquer, G. A. (2018). Rimas
+        byte cN = (byte) nombres.length;
+//        str.substring(0, 1).toUpperCase() + str.substring(1);
+        String salida = this.apellidoAutor.substring(0, 1).toUpperCase() + this.apellidoAutor.substring(1).concat(", ");
+        for (byte i = 0; i < cN; i++) {
+            salida = salida.concat(nombres[i].substring(0, 1).toUpperCase() + ". ");
+        }
+        salida = salida.concat("(" + this.anioPublicacion + "). " + this.titulo);
+        return salida;
     }
 
     public String recortarTitulo() {
