@@ -19,12 +19,12 @@ public class LibroTest {
     }
 
     @Test
-    public void libroCreadoNoEsNull() {
+    public void libroCreadoNoEsNullTest() {
         assertNotNull(libro);
     }
 
     @Test
-    public void libroCreadoTieneDatosBien() {
+    public void libroCreadoTieneDatosBienTest() {
         assertEquals("jorge luis", libro.getNombresAutor());
         assertEquals(100, (int) libro.getPaginas());
         assertEquals("Ficciones", libro.getTitulo());
@@ -33,7 +33,7 @@ public class LibroTest {
     }
 
     @Test
-    public void normalizaBienElTitulo() {
+    public void normalizaBienElTituloTest() {
         String tituloNormalizado = "ingenioso hidalgo don Quijote de la Mancha, El";
         assertEquals(tituloNormalizado, libro1.normalizarTitulo());
         libro = new Libro("mister", "X", 100, "El secreto", 2000, Genero.FANTASIA);
@@ -41,11 +41,9 @@ public class LibroTest {
     }
 
     @Test
-    public void formateaAPA() {
+    public void formateaAPATest() {
         String libroEnAPA = "Borges, J. L. (1939). Ficciones";
         assertEquals(libroEnAPA, libro.formatoAPA());
     }
 
-//    @Test
-//    public void 
 }

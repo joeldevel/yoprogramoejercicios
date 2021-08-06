@@ -26,17 +26,17 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void bibliotecaCreadaNoEsNull() {
+    public void bibliotecaCreadaNoEsNullTest() {
         assertNotNull(b);
     }
 
     @Test
-    public void bibliotecaContiene4LibrosAgregados() {
+    public void bibliotecaContiene4LibrosAgregadosTest() {
         assertEquals(4, b.getCantidadLibros());
     }
 
     @Test
-    public void ordenaPorAutor() {
+    public void ordenaPorAutorTest() {
         b.ordenarPorApellido();
 
         assertEquals("Borges", b.getLibro(0).getApellidoAutor());
@@ -46,7 +46,17 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void ordenaPorTitulo() {
+    public void ordenaPorTituloTest() {
+        b.ordenarPorTitulo();
+        // c Bor dun bot
+        assertEquals("Cervantes", b.getLibro(0).getApellidoAutor());
+        assertEquals("Borges", b.getLibro(1).getApellidoAutor());
+        assertEquals("Dundy", b.getLibro(2).getApellidoAutor());
+        assertEquals("Botana", b.getLibro(3).getApellidoAutor());
+    }
+
+    @Test
+    public void ordenaPorAnioPublicacionTest() {
         b.ordenarPorTitulo();
         // c Bor dun bot
         assertEquals("Cervantes", b.getLibro(0).getApellidoAutor());
