@@ -38,6 +38,8 @@ public class LibroTest {
         assertEquals(tituloNormalizado, libro1.normalizarTitulo());
         libro = new Libro("mister", "X", 100, "El secreto", 2000, Genero.FANTASIA);
         assertEquals("secreto, El", libro.normalizarTitulo());
+        libro = new Libro("Johannes", "Burdunga", 900, "Los Ardientes pampanos", 2019, Genero.TERROR);
+        assertEquals("Ardientes pampanos, Los", libro.normalizarTitulo());
     }
 
     @Test

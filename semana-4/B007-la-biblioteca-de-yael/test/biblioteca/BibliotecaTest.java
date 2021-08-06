@@ -8,8 +8,8 @@ import biblioteca.*;
 
 public class BibliotecaTest {
 
-    Biblioteca b;
-    Libro libro, libro1, libro2, libro3;
+    Biblioteca b, b2;
+    Libro libro, libro1, libro2, libro3, libro4, libro5;
 
     @Before
     public void setUp() {
@@ -17,12 +17,21 @@ public class BibliotecaTest {
         libro1 = new Libro("miguel de", "Cervantes", 1000, "El ingenioso hidalgo don Quijote de la Mancha", 1490, Genero.NOVELA);
         libro2 = new Libro("Maru", "Botana", 250, "Todo dulce", 2005, Genero.COCINA);
         libro3 = new Libro("Elaine", "Dundy", 120, "Te quiero verde", 1968, Genero.NOVELA);
+        libro4 = new Libro("Johannes", "Burdunga", 900, "Los Ardientes pampanos", 2019, Genero.TERROR);
         b = new Biblioteca(4);
-
+        b2 = new Biblioteca(5);
+        
         b.agregarLibro(libro3);
         b.agregarLibro(libro1);
         b.agregarLibro(libro2);
         b.agregarLibro(libro);
+        
+        b2.agregarLibro(libro);
+        b2.agregarLibro(libro1);
+        b2.agregarLibro(libro2);
+        b2.agregarLibro(libro3);
+        b2.agregarLibro(libro4);
+        
     }
 
     @Test
@@ -53,6 +62,17 @@ public class BibliotecaTest {
         assertEquals("Borges", b.getLibro(1).getApellidoAutor());
         assertEquals("Dundy", b.getLibro(2).getApellidoAutor());
         assertEquals("Botana", b.getLibro(3).getApellidoAutor());
+    }
+
+    @Test
+    public void ordenaPorTituloNormalizadoTest() {
+        b.ordenarPorTituloNormalizado();
+        // burdunda bor cer dun bot
+        assertEquals("Burdunga", b.getLibro(0).getApellidoAutor());
+        assertEquals("Borges", b.getLibro(1).getApellidoAutor());
+        assertEquals("Cervantes", b.getLibro(2).getApellidoAutor());
+        assertEquals("Dundy", b.getLibro(3).getApellidoAutor());
+        assertEquals("Botana", b.getLibro(4).getApellidoAutor());
     }
 
     @Test

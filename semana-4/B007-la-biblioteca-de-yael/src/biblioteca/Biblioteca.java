@@ -49,6 +49,10 @@ public class Biblioteca {
     public void ordenarPorTitulo() {
         Arrays.sort(libros, new ComparadorPorTitulo());
     }
+    
+    public void ordenarPorTituloNormalizado() {
+        Arrays.sort(libros, new ComparadorPorTituloNormalizado());
+    }
 
     public void ordenarPorAnioPublicacion() {
         Arrays.sort(libros, new ComparadorPorAnioPublicacion());
