@@ -54,4 +54,8 @@ public class Biblioteca {
         Arrays.sort(libros, new ComparadorPorAnioPublicacion());
     }
 
+    public void ordenarPorPaginas() {
+        Arrays.sort(libros, new ComparadorPorPaginas());
+    }
+
 }

@@ -65,4 +65,14 @@ public class BibliotecaTest {
         assertEquals("Botana", b.getLibro(3).getApellidoAutor());
     }
 
+    @Test
+    public void ordenaPorCantidadPaginasTest() {
+        b.ordenarPorPaginas();
+        // c Bot dun bor
+        assertEquals("Cervantes", b.getLibro(0).getApellidoAutor());
+        assertEquals("Botana", b.getLibro(1).getApellidoAutor());
+        assertEquals("Dundy", b.getLibro(2).getApellidoAutor());
+        assertEquals("Borges", b.getLibro(3).getApellidoAutor());
+    }
+
 }
