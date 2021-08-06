@@ -53,6 +53,10 @@ public class Biblioteca {
             System.out.println(Genero.values()[i].name() + " " + librosPorGenero[i][1]);
         }
     }
+    
+    public int cantidadLibrosPorGenero(Genero g) {
+        return librosPorGenero[g.ordinal()][1]; 
+    }
 
     public void ordenar() {
         Arrays.sort(libros);

@@ -96,8 +96,17 @@ public class BibliotecaTest {
     }
     
    @Test
-   public void cantidadDeLibrosPorGenero() {
+   public void cantidadDeLibrosPorGeneroTest() {
        b2.cantidadLibrosPorGenero();
+   }
+   
+   @Test
+   public void cantidadLibrosPorGeneroIndividual() {
+       assertEquals(2, b2.cantidadLibrosPorGenero(Genero.NOVELA));
+       assertEquals(1, b2.cantidadLibrosPorGenero(Genero.FANTASIA));
+       assertEquals(1, b2.cantidadLibrosPorGenero(Genero.TERROR));
+       assertEquals(1, b2.cantidadLibrosPorGenero(Genero.COCINA));
+       assertEquals(0, b2.cantidadLibrosPorGenero(Genero.INFANTIL));
    }
 
 }
