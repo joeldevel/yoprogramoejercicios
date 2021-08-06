@@ -116,5 +116,15 @@ public class BibliotecaTest {
        assertFalse(largo.getTitulo().length() <= 200);
        assertTrue(largo.recortarTitulo().length() <= 200);
    }
+   
+   @Test
+   public void noHayLibroRepetidoTest() {
+       assertFalse(b.libroRepetido(new Libro("Mary", "Lamb", 96, "Tales from Shakespeare", 1999, Genero.FANTASIA)));
+   }
+   
+   @Test
+   public void hayLibroRepetidoTest() {
+       assertTrue(b.libroRepetido(new Libro("miguel de", "Cervantes", 1200, "El ingenioso hidalgo don Quijote de la Mancha", 2000, Genero.NOVELA)));
+   }
 
 }
