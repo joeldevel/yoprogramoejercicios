@@ -97,7 +97,7 @@ public class BibliotecaTest {
     
    @Test
    public void cantidadDeLibrosPorGeneroTest() {
-       b2.cantidadLibrosPorGenero();
+       b2.mostrarCantidadLibrosPorGenero();
    }
    
    @Test

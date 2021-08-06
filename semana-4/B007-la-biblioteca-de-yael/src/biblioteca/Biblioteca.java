@@ -47,7 +47,7 @@ public class Biblioteca {
         return libroRepetido;
     }
     
-    public void cantidadLibrosPorGenero() {
+    public void mostrarCantidadLibrosPorGenero() {
         for(int i=0; i<librosPorGenero.length; i++) {
             if(librosPorGenero[i][1] == 0) continue;
             System.out.println(Genero.values()[i].name() + " " + librosPorGenero[i][1]);
