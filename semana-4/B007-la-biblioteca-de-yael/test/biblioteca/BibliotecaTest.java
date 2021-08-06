@@ -95,18 +95,26 @@ public class BibliotecaTest {
         assertEquals("Borges", b.getLibro(3).getApellidoAutor());
     }
     
-   @Test
-   public void cantidadDeLibrosPorGeneroTest() {
-       b2.mostrarCantidadLibrosPorGenero();
-   }
+//   @Test
+//   public void cantidadDeLibrosPorGeneroTest() {
+//       b2.mostrarCantidadLibrosPorGenero();
+//   }
    
    @Test
-   public void cantidadLibrosPorGeneroIndividual() {
+   public void cantidadLibrosPorGeneroIndividualTest() {
        assertEquals(2, b2.cantidadLibrosPorGenero(Genero.NOVELA));
        assertEquals(1, b2.cantidadLibrosPorGenero(Genero.FANTASIA));
        assertEquals(1, b2.cantidadLibrosPorGenero(Genero.TERROR));
        assertEquals(1, b2.cantidadLibrosPorGenero(Genero.COCINA));
        assertEquals(0, b2.cantidadLibrosPorGenero(Genero.INFANTIL));
+   }
+   
+   @Test
+   public void recortaTituloA200CaracteresTest() {
+       String titulo = " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt expli";
+       Libro largo = new Libro("x", "y",200, titulo, 2000, Genero.INFANTIL);
+       assertFalse(largo.getTitulo().length() <= 200);
+       assertTrue(largo.recortarTitulo().length() <= 200);
    }
 
 }
