@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 public class AlmacenPago {
 
-    final private int FQ_CAPITALIZACION_PERIODO = 12;
+    final protected int FQ_CAPITALIZACION_PERIODO = 12;
 
     public AlmacenPago() {
 
