@@ -46,10 +46,25 @@ public class AlmacenPagoTest {
     public void mostrarVFlanzaErrorAlIngresarInteresNegativoTest() {
         almacen.mostrarVF(0, -1, 0);
     }
-    
+
     @Test(expected = Error.class)
     public void mostrarVFlanzaErrorAlIngresarPeriodoNegativoTest() {
         almacen.mostrarVF(0, 0, -1);
+    }
+
+    @Test(expected = Error.class)
+    public void minimoMesesVFlanzaErrorAlIngresarMontoNegativoTest() {
+        almacen.minimoMesesVF(-1, 0, 0);
+    }
+
+    @Test(expected = Error.class)
+    public void minimoMesesVFlanzaErrorAlIngresarInteresNegativoTest() {
+        almacen.minimoMesesVF(-1, 0, 0);
+    }
+
+    @Test(expected = Error.class)
+    public void minimoMesesVFlanzaErrorAlIngresarPeriodoNegativoTest() {
+        almacen.minimoMesesVF(-1, 0, 0);
     }
 
 }
