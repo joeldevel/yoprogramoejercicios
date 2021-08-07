@@ -7,7 +7,7 @@ public class R002InversionesMensuales {
         AlmacenPago almacen = new AlmacenPago();
         double montoInicial = 1000;
         double interesAnual = 0.24;
-//        int frequenciaCapitalization = almacen.FQ_CAPITALIZACION_PERIODO;
+
         int cantidadPeriodos = 4;
 
         System.out.println("**** Metodo 1 ****");
