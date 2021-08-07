@@ -21,6 +21,7 @@ public class AlmacenPagoTest {
         assertEquals(0, almacen.calcularVF(0, 0, 0, c),0);
         assertEquals(0, almacen.calcularVF(0, 10, 0, c),0);
         assertEquals(10, almacen.calcularVF(10, 0, 0, c),0);
+        assertEquals(10, almacen.calcularVF(10, 100, 0, c),0);
     }
     
     @Test
