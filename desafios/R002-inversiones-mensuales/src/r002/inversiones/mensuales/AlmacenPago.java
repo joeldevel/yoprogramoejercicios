@@ -26,7 +26,7 @@ public class AlmacenPago {
         }
         double fvParcial = montoAInvertir;
         for (int i = 0; i < cantidadPeriodos; i++) {
-            fvParcial = calcularVFPeriodo(fvParcial, interesAnual, 1);
+            fvParcial = calcularVF(fvParcial, interesAnual, 1, c);
 //            String.format("%.5g%n", 0.912385);
             DecimalFormat df = new DecimalFormat("#.####");
             df.setRoundingMode(RoundingMode.CEILING);
@@ -50,8 +50,8 @@ public class AlmacenPago {
         return calcularNumeroPeriodos(montoAInvertir, vfDeseado, interesAnual);
     }
 
-    protected double calcularVFPeriodo(double p, double i, int n) {
-        return p * Math.pow((1 + (i / c)), n * c);
+    protected double calcularVF(double p, double i, int n, int fqC) {
+        return p * Math.pow((1 + (i / fqC)), n * fqC);
     }
 
     protected double calcularNumeroPeriodos(double p, double vf, double i) {

@@ -9,15 +9,23 @@ import r002.inversiones.mensuales.*;
 public class AlmacenPagoTest {
 
     AlmacenPago almacen;
+    int c = 12;
 
     @Before
     public void setUp() {
         almacen = new AlmacenPago();
     }
-
+    
+    @Test
+    public void valorFuturoTest() {
+        assertEquals(0, almacen.calcularVF(0, 0, 0, c),0);
+        assertEquals(0, almacen.calcularVF(0, 10, 0, c),0);
+        assertEquals(10, almacen.calcularVF(10, 0, 0, c),0);
+    }
+    
     @Test
     public void valorFuturo100Interes24PorcientoTest() {
-        assertEquals(1268.2417945625455, almacen.calcularVFPeriodo(1000, 0.24, 1), 0);
+        assertEquals(1268.2417945625455, almacen.calcularVF(1000, 0.24, 1, c), 0);
     }
 
     @Test
