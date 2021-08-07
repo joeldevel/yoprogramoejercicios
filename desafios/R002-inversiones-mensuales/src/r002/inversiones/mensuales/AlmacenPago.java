@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 public class AlmacenPago {
 
-    final private int c = 12; // frecuencia capitalizacion por periodo
+    final private int FQ_CAPITALIZACION_PERIODO = 12; // frecuencia capitalizacion por periodo
 
     public AlmacenPago() {
 
@@ -26,7 +26,7 @@ public class AlmacenPago {
         }
         double fvParcial = montoAInvertir;
         for (int i = 0; i < cantidadPeriodos; i++) {
-            fvParcial = calcularVF(fvParcial, interesAnual, 1, c);
+            fvParcial = calcularVF(fvParcial, interesAnual, 1, FQ_CAPITALIZACION_PERIODO);
 //            String.format("%.5g%n", 0.912385);
             DecimalFormat df = new DecimalFormat("#.####");
             df.setRoundingMode(RoundingMode.CEILING);
