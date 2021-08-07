@@ -24,12 +24,12 @@ public class AlmacenPago {
         if (!esValorValido(interesAnual) || !esValorValido(montoAInvertir) || !esValorValido(cantidadPeriodos)) {
             throw new Error("argumentos invalidos");
         }
-//        double fvParcial = montoAInvertir;
+
         double[] valoresFuturos = this.obtenerValoresFuturos(montoAInvertir, interesAnual, cantidadPeriodos);
         for (int i = 0; i < valoresFuturos.length; i++) {
             System.out.println(this.formatearSalida(valoresFuturos[i]));
         }
-//      
+
     }
 
     /**
