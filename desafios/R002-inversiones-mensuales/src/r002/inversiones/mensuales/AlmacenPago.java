@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 public class AlmacenPago {
 
-    final private int c = 12; // frecuancia capitalizacion por periodo
+    final private int c = 12; // frecuencia capitalizacion por periodo
 
     public AlmacenPago() {
 
@@ -13,8 +13,8 @@ public class AlmacenPago {
 
     /**
      *
-     * pre: post:
-     *
+     * pre: los argumentos son numeros positivos
+     * post: muestra valor futuro al finalizar cada periodo en una linea cada uno
      * @param montoAInvertir double positivo
      * @param interesAnual double positivo
      * @param cantidadPeriodos integer positivo
@@ -36,6 +36,13 @@ public class AlmacenPago {
 
     }
 
+    /**
+     * pre: los argumentos son numeros positivos 
+     * @param montoAInvertir
+     * @param interesAnual
+     * @param vfDeseado
+     * @return la cantidad de meses minima para alcanzar vfDesesado  
+     */
     public double minimoMesesVF(double montoAInvertir, double interesAnual, double vfDeseado) {
         if (!esValorValido(interesAnual) || !esValorValido(montoAInvertir) || !esValorValido(vfDeseado)) {
             throw new Error("argumentos invalidos");
@@ -51,9 +58,6 @@ public class AlmacenPago {
         return Math.floor(Math.log(vf / p) / Math.log(1 + i)) * 12;
     }
 
-//    public void calcularPrincipal() {
-//
-//    }
     private boolean esValorValido(double x) {
         return x >= 0;
     }
