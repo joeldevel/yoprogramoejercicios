@@ -24,9 +24,16 @@ public class AlmacenPago {
         }
 
     }
-
+    
+    public double minimoMesesVF(double montoAInvertir, double interesAnual, double vfDeseado) {
+        return calcularNumeroPeriodos(montoAInvertir, vfDeseado, interesAnual);
+    }
     protected double calcularVFPeriodo(double p, double i, int n) {
         return p * Math.pow((1 + (i / c)), n * c);
+    }
+    
+    protected double calcularNumeroPeriodos(double p, double vf, double i) {
+        return  Math.floor(Math.log(vf/p) / Math.log(1 + i)) * 12;
     }
 
     public void calcularPrincipar() {

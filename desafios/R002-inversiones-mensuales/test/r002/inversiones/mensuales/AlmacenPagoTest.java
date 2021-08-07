@@ -27,4 +27,14 @@ public class AlmacenPagoTest {
 //        almacen.mostrarVF(1000,  0.71355714, 5);
     }
 
+    @Test
+    public void mesesParaObtener2000Dado1000Y7PorcientoInteres() {
+        assertEquals(120, (int) almacen.minimoMesesVF(1000, 0.07, 2000), 0);
+    }
+
+    @Test
+    public void mesesParaObtener2587Dado1000Y24PorcientoInteres() {
+        assertEquals(48, (int) almacen.minimoMesesVF(1000, 0.24, 2587), 0);
+    }
+
 }
