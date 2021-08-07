@@ -28,13 +28,28 @@ public class AlmacenPagoTest {
     }
 
     @Test
-    public void mesesParaObtener2000Dado1000Y7PorcientoInteres() {
+    public void mesesParaObtener2000Dado1000Y7PorcientoInteresTest() {
         assertEquals(120, (int) almacen.minimoMesesVF(1000, 0.07, 2000), 0);
     }
 
     @Test
-    public void mesesParaObtener2587Dado1000Y24PorcientoInteres() {
+    public void mesesParaObtener2587Dado1000Y24PorcientoInteresTest() {
         assertEquals(48, (int) almacen.minimoMesesVF(1000, 0.24, 2587), 0);
+    }
+
+    @Test(expected = Error.class)
+    public void mostrarVFlanzaErrorAlIngresarMontoNegativoTest() {
+        almacen.mostrarVF(-1, 0, 0);
+    }
+
+    @Test(expected = Error.class)
+    public void mostrarVFlanzaErrorAlIngresarInteresNegativoTest() {
+        almacen.mostrarVF(0, -1, 0);
+    }
+    
+    @Test(expected = Error.class)
+    public void mostrarVFlanzaErrorAlIngresarPeriodoNegativoTest() {
+        almacen.mostrarVF(0, 0, -1);
     }
 
 }
