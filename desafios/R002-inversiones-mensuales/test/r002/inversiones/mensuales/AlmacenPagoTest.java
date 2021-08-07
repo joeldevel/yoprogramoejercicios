@@ -16,7 +16,7 @@ public class AlmacenPagoTest {
     }
 
     @Test
-    public void valorFuturoTest() {
+    public void valorFuturo100Interes24PorcientoTest() {
         assertEquals(1268.2417945625455, almacen.calcularVFPeriodo(1000, 0.24, 1), 0);
     }
 
