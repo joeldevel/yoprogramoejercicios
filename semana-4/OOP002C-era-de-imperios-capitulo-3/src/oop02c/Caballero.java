@@ -13,7 +13,7 @@ public class Caballero extends Unidad {
     @Override
     public boolean atacar(Unidad enemigo) {
         if (estaEnRangoDeAtaque(this.distanciaCon(enemigo), Caballero.DISTANCIA_MIN_ATAQUE, Caballero.DISTANCIA_MAX_ATAQUE)) {
-            enemigo.setSalud(enemigo.getSalud() - Soldado.ATAQUE_DAMAGE);
+            enemigo.setSalud(enemigo.getSalud() - Caballero.ATAQUE_DAMAGE);
             return true;
         }
         return false;
