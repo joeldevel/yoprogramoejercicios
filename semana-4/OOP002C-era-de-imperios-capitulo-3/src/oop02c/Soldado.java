@@ -11,7 +11,7 @@ public class Soldado extends Unidad {
 
     @Override
     public boolean atacar(Unidad enemigo) {
-        if (estaEnRangoDeAtaque(this.distanciaCon(enemigo), Soldado.DISTANCIA_ATAQUE)) {
+        if (estaEnRangoDeAtaque(this.distanciaCon(enemigo), 0, Soldado.DISTANCIA_ATAQUE)) {
             enemigo.setSalud(enemigo.getSalud() - Soldado.ATAQUE_DAMAGE);
             return true;
         }
