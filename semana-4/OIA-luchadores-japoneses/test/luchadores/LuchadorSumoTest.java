@@ -34,5 +34,10 @@ public class LuchadorSumoTest {
     public void dominaPorAlturaYPesoTest() {
         assertTrue(l1.dominaA(l4));
     }
+    
+    @Test
+    public void noDominaPesoYAlturaIguales() {
+        assertFalse(l1.dominaA(new LuchadorSumo(100, 180)));
+    }
 
 }

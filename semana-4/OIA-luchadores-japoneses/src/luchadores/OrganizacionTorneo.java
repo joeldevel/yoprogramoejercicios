@@ -12,7 +12,7 @@ public class OrganizacionTorneo {
         this.luchadores = luchadores;
     }
 
-    private int[] arrayDominancia = new int[10];
+    private final int[] arrayDominancia = new int[10];
 
     public int[] generarDominancia() {
         // Recorro el array de luchadores
