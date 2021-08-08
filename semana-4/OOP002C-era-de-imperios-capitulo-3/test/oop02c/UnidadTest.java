@@ -28,7 +28,7 @@ public class UnidadTest {
     @Test
     public void puedeAtacarYDebilitarAlEnemigoSiSeEncuentraCerca() {
         assertTrue(unidad1.atacar(unidad2));
-        assertEquals(Unidad.SALUD_INICIAL - Unidad.ATAQUE_DAMAGE, unidad2.getSalud(), 0);
+        assertEquals(Unidad.SALUD_INICIAL - Unidad.getATAQUE_DAMAGE(), unidad2.getSalud(), 0);
         assertTrue(unidad1.distanciaCon(unidad2) <= Unidad.DISTANCIA_ATAQUE);
     }
 

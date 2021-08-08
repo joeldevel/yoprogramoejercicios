@@ -4,7 +4,11 @@ public class Unidad {
 
     public final static double SALUD_INICIAL = 100;
     public final static double DISTANCIA_ATAQUE = 2;
-    public final static double ATAQUE_DAMAGE = 10;
+    private final static double ATAQUE_DAMAGE = 10;
+
+    public static double getATAQUE_DAMAGE() {
+        return ATAQUE_DAMAGE;
+    }
 
     private Posicion posicion;
 
