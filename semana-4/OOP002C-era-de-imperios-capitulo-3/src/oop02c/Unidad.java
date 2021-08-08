@@ -3,16 +3,19 @@ package oop02c;
 public class Unidad {
 
     public final static double SALUD_INICIAL = 100;
-    public final static double DISTANCIA_ATAQUE = 2;
+    private final static double DISTANCIA_ATAQUE = 2;
     private final static double ATAQUE_DAMAGE = 10;
+
+    private Posicion posicion;
+    private double salud;
+
+    public static double getDISTANCIA_ATAQUE() {
+        return DISTANCIA_ATAQUE;
+    }
 
     public static double getATAQUE_DAMAGE() {
         return ATAQUE_DAMAGE;
     }
-
-    private Posicion posicion;
-
-    private double salud;
 
     public Unidad(Posicion posicion) {
         this.posicion = posicion;

@@ -29,14 +29,14 @@ public class UnidadTest {
     public void puedeAtacarYDebilitarAlEnemigoSiSeEncuentraCerca() {
         assertTrue(unidad1.atacar(unidad2));
         assertEquals(Unidad.SALUD_INICIAL - Unidad.getATAQUE_DAMAGE(), unidad2.getSalud(), 0);
-        assertTrue(unidad1.distanciaCon(unidad2) <= Unidad.DISTANCIA_ATAQUE);
+        assertTrue(unidad1.distanciaCon(unidad2) <= Unidad.getDISTANCIA_ATAQUE());
     }
 
     @Test
     public void noPuedeAtacarAUnEnemigoQueSeEncuentraFueraDeAlcance() {
         assertFalse(unidad1.atacar(unidad3));
         assertEquals(Unidad.SALUD_INICIAL, unidad3.getSalud(), 0);
-        assertFalse(unidad1.distanciaCon(unidad3) <= Unidad.DISTANCIA_ATAQUE);
+        assertFalse(unidad1.distanciaCon(unidad3) <= Unidad.getDISTANCIA_ATAQUE());
     }
 
 }
