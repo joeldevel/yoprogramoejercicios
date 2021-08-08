@@ -36,15 +36,15 @@ public class Unidad {
     }
 
     public boolean atacar(Unidad enemigo) {
-        if (estaEnRangoDeAtaque(this.distanciaCon(enemigo))) {
+        if (estaEnRangoDeAtaque(this.distanciaCon(enemigo), Unidad.DISTANCIA_ATAQUE)) {
             enemigo.salud -= Unidad.ATAQUE_DAMAGE;
             return true;
         }
         return false;
     }
 
-    private boolean estaEnRangoDeAtaque(double distancia) {
-        return distancia <= Unidad.DISTANCIA_ATAQUE;
+    protected boolean estaEnRangoDeAtaque(double distanciaActual, double rango) {
+        return distanciaActual <= rango;
     }
 
 }
