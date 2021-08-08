@@ -1,7 +1,7 @@
 package oop02c;
 
 public class Arquero extends Unidad {
-    
+
     public final static double DISTANCIA_MIN_ATAQUE = 5;
     public final static double DISTANCIA_MAX_ATAQUE = 25;
     public final static double ATAQUE_DAMAGE = 7;
@@ -18,5 +18,5 @@ public class Arquero extends Unidad {
         }
         return false;
     }
-    
+
 }

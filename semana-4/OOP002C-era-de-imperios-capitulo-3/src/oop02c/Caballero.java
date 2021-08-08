@@ -18,6 +18,5 @@ public class Caballero extends Unidad {
         }
         return false;
     }
-    
 
 }

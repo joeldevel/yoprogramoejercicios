@@ -1,10 +1,10 @@
 package oop02c;
 
 public class Soldado extends Unidad {
-    
+
     public final static double DISTANCIA_ATAQUE = 1.5;
     public final static double ATAQUE_DAMAGE = 20;
-    
+
     public Soldado(Posicion posicion) {
         super(posicion);
     }
