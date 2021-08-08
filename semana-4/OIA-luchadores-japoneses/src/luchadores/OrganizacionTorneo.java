@@ -14,7 +14,7 @@ public class OrganizacionTorneo {
 
     private int[] arrayDominancia = new int[10];
 
-    public void generarDominancia() {
+    public int[] generarDominancia() {
         // Recorro el array de luchadores
         for (int i = 0; i < this.luchadores.length; i++) {
             // comparo con los elementos siguientes
@@ -28,6 +28,7 @@ public class OrganizacionTorneo {
                 }
             }
         }
+        return this.arrayDominancia;
     }
 
     public void mostrarTablaDominancia() {
