@@ -28,14 +28,14 @@ public class InteraccionTest {
 
         assertFalse(s1.atacar(a1)); // no llega 
         assertEquals(100, a1.getSalud(), 0); // igual que antes del ataque
-//
+
         assertFalse(a1.atacar(s1));
-        assertEquals(70, s1.getSalud(), 0); // -7
-//
+        assertEquals(70, s1.getSalud(), 0); 
+
         assertTrue(a1.atacar(c1));
         assertEquals(93, c1.getSalud(), 0); // -7
-//
-        assertTrue(a1.atacar(s2)); // -30
+
+        assertTrue(a1.atacar(s2)); // -7
         assertEquals(93, s2.getSalud(), 0);
     }
 }
