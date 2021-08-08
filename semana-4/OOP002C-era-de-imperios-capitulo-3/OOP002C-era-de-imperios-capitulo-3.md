@@ -6,29 +6,31 @@ Nuestros primeros usuarios notaron que el juego era un poco aburrido ¡Tenemos q
 
 ```java
 
-Caballero c1 = new Caballero(new Posicion(10, 0));
-Caballero c2 = new Caballero(new Posicion(0, 5));
+    Caballero c1 = new Caballero(new Posicion(0, 10));
+    Caballero c2 = new Caballero(new Posicion(5, 0));
 
-Arquero a1 = new Arquero(new Posicion(7, 0));
+    Arquero a1 = new Arquero(new Posicion(7, 0));
 
-Soldado s1 = new Soldado(new Posicion(4, 0));
+    Soldado s1 = new Soldado(new Posicion(4, 0));
+    Soldado s2 = new Soldado(new Posicion(0, 0));
 
-s1.atacar(c2);
-c2.getSalud(); // -20;
+// tests
+    assertTrue(s1.atacar(c2)); // true
+    assertEquals(80, c2.getSalud(), 0); // -20;
 
-c2.atacar(s1);
-s1.getSalud(); // -30
+    assertTrue(c2.atacar(s1)); //true
+    assertEquals(70, s1.getSalud(), 0); // -30
 
-s1.atacar(a1); // no llega 
-a1.getSalud(); // igual que antes del ataque
+    assertFalse(s1.atacar(a1)); // no llega 
+    assertEquals(100, a1.getSalud(), 0); // igual que antes del ataque
 
-a1.atacar(s1);
-s1.getSalud(); // -7
+    assertFalse(a1.atacar(s1)); // true
+    assertEquals(70, s1.getSalud(), 0); 
 
-a1.atacar(c1);
-c1.getSalud(); // -7
+    assertTrue(a1.atacar(c1)); // true
+    assertEquals(93, c1.getSalud(), 0); // -7
 
-c1.atacar(a1); // -30
-
+    assertTrue(a1.atacar(s2)); // -7
+    assertEquals(93, s2.getSalud(), 0);
 
 ```
