@@ -1,17 +1,12 @@
 package oop001d;
 
-public class CuentaCorriente extends Cuenta{
+public class CuentaCorriente extends Cuenta {
 
-    private double descubierto;
-    
-//    public CuentaCorriente() {
-//        super();
-//    }
-    
+    private Cuenta descubierto;
+
     public CuentaCorriente(double saldoInicial, double descubierto) {
         super(saldoInicial);
-        this.descubierto = descubierto;
+        this.descubierto = new Cuenta(descubierto);
     }
-    
-    
+
 }
