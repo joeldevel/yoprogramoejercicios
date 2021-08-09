@@ -16,6 +16,10 @@ public class Transaccion {
         this.fecha = fecha;
     }
 
+    public TipoTransaccion getTipo() {
+        return tipo;
+    }
+
     public String getMotivo() {
         return this.motivo;
     }

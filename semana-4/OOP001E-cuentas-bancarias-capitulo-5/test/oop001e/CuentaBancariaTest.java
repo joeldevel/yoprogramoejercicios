@@ -77,10 +77,24 @@ public class CuentaBancariaTest {
         assertNotEquals(9450, cuenta1.getSaldo(), delta);
         assertNotEquals(550, cuenta2.getSaldo(), delta);
     }
-    
+
     @Test
     public void cuentaRegistraTransaccion() {
         cuenta1.ingresarDinero(0, "hola");
-        assertEquals(0, cuenta1.getRegistroDeTransacciones()[0].getMonto(),0);
+        assertEquals(0, cuenta1.getRegistroDeTransacciones()[0].getMonto(), 0);
+    }
+
+    @Test
+    public void cuentaRegistraTipoDeTransaccion() {
+        cuenta1.ingresarDinero(10, "aguinaldo");
+        assertEquals(10, cuenta1.getSaldo(), 0);
+        assertEquals(TipoTransaccion.DEPOSITO, cuenta1.getRegistroDeTransacciones()[0].getTipo());
+        assertEquals(10, cuenta1.getRegistroDeTransacciones()[0].getMonto(), 0);
+        
+        cuenta1.retirarDinero(5, "cafe jaicano");
+        assertEquals(TipoTransaccion.RETIRO, cuenta1.getRegistroDeTransacciones()[1].getTipo());
+        assertEquals(5, cuenta1.getSaldo(), 0);
+        assertEquals(5, cuenta1.getRegistroDeTransacciones()[1].getMonto(), 0);
+
     }
 }
