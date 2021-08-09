@@ -71,6 +71,10 @@ public class Cuenta {
         return this.getSaldo();
 
     }
+    
+    public Transaccion[] getRegistroDeTransacciones() {
+        return this.registroDeTransacciones;
+    }
 
     protected boolean esCantidadValida(double cantidad) {
         return cantidad >= 0;

@@ -77,4 +77,10 @@ public class CuentaBancariaTest {
         assertNotEquals(9450, cuenta1.getSaldo(), delta);
         assertNotEquals(550, cuenta2.getSaldo(), delta);
     }
+    
+    @Test
+    public void cuentaRegistraTransaccion() {
+        cuenta1.ingresarDinero(1000);
+        
+    }
 }
