@@ -79,22 +79,34 @@ public class CuentaBancariaTest {
     }
 
     @Test
-    public void cuentaRegistraTransaccion() {
+    public void cuentaRegistraTransaccionTest() {
         cuenta1.ingresarDinero(0, "hola");
         assertEquals(0, cuenta1.getRegistroDeTransacciones()[0].getMonto(), 0);
     }
 
     @Test
-    public void cuentaRegistraTipoDeTransaccion() {
+    public void cuentaRegistraTipoDeTransaccionTest() {
         cuenta1.ingresarDinero(10, "aguinaldo");
         assertEquals(10, cuenta1.getSaldo(), 0);
         assertEquals(TipoTransaccion.DEPOSITO, cuenta1.getRegistroDeTransacciones()[0].getTipo());
         assertEquals(10, cuenta1.getRegistroDeTransacciones()[0].getMonto(), 0);
-        
+
         cuenta1.retirarDinero(5, "cafe jaicano");
         assertEquals(TipoTransaccion.RETIRO, cuenta1.getRegistroDeTransacciones()[1].getTipo());
         assertEquals(5, cuenta1.getSaldo(), 0);
         assertEquals(5, cuenta1.getRegistroDeTransacciones()[1].getMonto(), 0);
 
+    }
+
+    @Test
+    public void cuentaRegistraMontoTransaccionTest() {
+        cuenta1.ingresarDinero(10, "aguinaldo");
+        assertEquals(10, cuenta1.getRegistroDeTransacciones()[0].getMonto(), 0);
+    }
+
+    @Test
+    public void cuentaRegistraMotivoTransaccionTest() {
+        cuenta1.ingresarDinero(10, "aguinaldo");
+        assertEquals("aguinaldo", cuenta1.getRegistroDeTransacciones()[0].getMotivo());
     }
 }
