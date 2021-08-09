@@ -42,7 +42,7 @@ public class Cuenta {
 
     }
 
-    private boolean esCantidadValida(double cantidad) {
+    protected boolean esCantidadValida(double cantidad) {
         return cantidad >= 0;
     }
 
