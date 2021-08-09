@@ -7,10 +7,12 @@ public class Transaccion {
     private final String motivo;
     private final double monto;
     private final Date fecha;
+    private final TipoTransaccion tipo;
 
-    public Transaccion(String motivo, double monto, Date fecha) {
+    public Transaccion(String motivo, double monto, TipoTransaccion tipo, Date fecha) {
         this.motivo = motivo;
         this.monto = monto;
+        this.tipo = tipo;
         this.fecha = fecha;
     }
 
