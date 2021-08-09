@@ -80,7 +80,7 @@ public class CuentaBancariaTest {
     
     @Test
     public void cuentaRegistraTransaccion() {
-        cuenta1.ingresarDinero(1000);
-        
+        cuenta1.ingresarDinero(0, "hola");
+        assertEquals(0, cuenta1.getRegistroDeTransacciones()[0].getMonto(),0);
     }
 }
