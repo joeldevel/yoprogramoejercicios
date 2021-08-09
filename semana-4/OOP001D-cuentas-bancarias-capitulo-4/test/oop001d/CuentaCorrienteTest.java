@@ -9,7 +9,6 @@ public class CuentaCorrienteTest {
     CuentaCorriente cuenta1, cuenta2;
     @Before
     public void setUp() {
-//        cuenta1 = new CuentaCorriente();
         cuenta2 = new CuentaCorriente(10000, 3000);
     }
     
