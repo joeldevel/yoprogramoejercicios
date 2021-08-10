@@ -83,12 +83,13 @@ public class Biblioteca implements Cloneable{
     }
     
     public Biblioteca clone() throws CloneNotSupportedException {
+        // hay que copiar tambien el array de libros por genero
+        
         Biblioteca clon = (Biblioteca) super.clone();
         clon.libros = new Libro[libros.length];
         for(int i=0; i< libros.length; i++) {
             clon.libros[i]= libros[i].clone();
         }
-        
         return clon;
     }
 }

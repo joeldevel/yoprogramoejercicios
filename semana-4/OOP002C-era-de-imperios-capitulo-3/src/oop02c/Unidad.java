@@ -53,5 +53,6 @@ public class Unidad {
     protected boolean estaEnRangoDeAtaque(double distanciaActual, double min, double max) {
         return distanciaActual >= min && distanciaActual <= max;
     }
-
+     // hacerun metodo para recibir danio
+    // y atacar es abstracta
 }
