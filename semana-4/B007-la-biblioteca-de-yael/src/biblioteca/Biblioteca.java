@@ -2,7 +2,7 @@ package biblioteca;
 
 import java.util.Arrays;
 
-public class Biblioteca {
+public class Biblioteca implements Cloneable{
 
     private Libro[] libros;
     private int cantidadLibros;
@@ -20,12 +20,9 @@ public class Biblioteca {
         libros = new Libro[tamanioBiblioteca];
         cantidadLibros = 0;
         Genero[] codigoGeneros = Genero.values();
-//        System.out.println(librosPorGenero.length);
-        for(int i=0; i< librosPorGenero.length; i++) {
+        for (int i = 0; i < librosPorGenero.length; i++) {
             librosPorGenero[i][0] = codigoGeneros[i].ordinal();
-//            System.out.println(librosPorGenero[i][0]);
-        }
-//        
+        }        
     }
 
     public void agregarLibro(Libro libro) {
@@ -46,16 +43,18 @@ public class Biblioteca {
         }
         return libroRepetido;
     }
-    
+
     public void mostrarCantidadLibrosPorGenero() {
-        for(int i=0; i<librosPorGenero.length; i++) {
-            if(librosPorGenero[i][1] == 0) continue;
+        for (int i = 0; i < librosPorGenero.length; i++) {
+            if (librosPorGenero[i][1] == 0) {
+                continue;
+            }
             System.out.println(Genero.values()[i].name() + " " + librosPorGenero[i][1]);
         }
     }
-    
+
     public int cantidadLibrosPorGenero(Genero g) {
-        return librosPorGenero[g.ordinal()][1]; 
+        return librosPorGenero[g.ordinal()][1];
     }
 
     public void ordenar() {
@@ -63,23 +62,33 @@ public class Biblioteca {
     }
 
     public void ordenarPorApellido() {
-        Arrays.sort(libros, new ComparadorPorApellido());
+        // pasarle hasta donde compara, s
+        Arrays.sort(libros, 0, this.cantidadLibros, new ComparadorPorApellido());
     }
 
     public void ordenarPorTitulo() {
-        Arrays.sort(libros, new ComparadorPorTitulo());
+        Arrays.sort(libros, 0, this.cantidadLibros, new ComparadorPorTitulo());
     }
-    
+
     public void ordenarPorTituloNormalizado() {
-        Arrays.sort(libros, new ComparadorPorTituloNormalizado());
+        Arrays.sort(libros, 0, this.cantidadLibros, new ComparadorPorTituloNormalizado());
     }
 
     public void ordenarPorAnioPublicacion() {
-        Arrays.sort(libros, new ComparadorPorAnioPublicacion());
+        Arrays.sort(libros, 0, this.cantidadLibros, new ComparadorPorAnioPublicacion());
     }
 
     public void ordenarPorPaginas() {
-        Arrays.sort(libros, new ComparadorPorPaginas());
+        Arrays.sort(libros, 0, this.cantidadLibros, new ComparadorPorPaginas());
     }
-
+    
+    public Biblioteca clone() throws CloneNotSupportedException {
+        Biblioteca clon = (Biblioteca) super.clone();
+        clon.libros = new Libro[libros.length];
+        for(int i=0; i< libros.length; i++) {
+            clon.libros[i]= libros[i].clone();
+        }
+        
+        return clon;
+    }
 }
