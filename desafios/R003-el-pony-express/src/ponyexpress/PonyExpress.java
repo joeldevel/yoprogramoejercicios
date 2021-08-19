@@ -25,7 +25,7 @@ public class PonyExpress {
                 // necesito un caballo adicional
                 cantidadCaballos++;
                 sumaDistancias = 0;
-                // comienzo a sumar distancias desde el elemento anterior
+                // comienzo a sumar distancias desde el elemento actual
                 i--;
             }
         }
