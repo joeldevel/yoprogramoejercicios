@@ -19,6 +19,10 @@ public class PonyExpressTest {
         assertEquals(4, PonyExpress.caballos(new int[]{6, 24, 6, 8, 28, 8, 23, 47, 17, 29, 37, 18, 40, 49}));
         assertEquals(3, PonyExpress.caballos(new int[]{100, 30, 100}));
         assertEquals(4, PonyExpress.caballos(new int[]{90, 90, 20, 90}));
+        assertEquals(0, PonyExpress.caballos(new int[]{}));
+        assertEquals(1, PonyExpress.caballos(new int[]{100}));        
+        assertEquals(1, PonyExpress.caballos(new int[]{10,10,10,10,10,10,10,10,10,10}));
+
     }
 
 }

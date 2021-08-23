@@ -8,17 +8,10 @@ public class PonyExpress {
      * extremo hasta el otro del recorrido
      */
     public static int caballos(int[] distancias) {
-        double sumaDistancias = 0;
+        if(distancias.length <= 0) return 0;
+        int sumaDistancias = 0;
         int cantidadCaballos = 1;
         for (int i = 0; i < distancias.length; i++) {
-//            if(distancias[i] > 100) {
-//                int d = distancias[i]; 
-//                while( d > 100) {
-//                    d -= 100;
-//                    cantidadCaballos++;
-//                }
-//                continue;
-//            }
             sumaDistancias += distancias[i];
             // los caballos no recorren mas de 100 millas
             if (sumaDistancias > 100) {
@@ -29,7 +22,6 @@ public class PonyExpress {
                 i--;
             }
         }
-//        return (int)Math.ceil(sumaDistancias / 100 );
         return cantidadCaballos;
     }
 }
