@@ -1,14 +1,9 @@
 package ponyexpress;
 
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PonyExpressTest {
-
-    @Before
-    public void setUp() {
-    }
 
     @Test
     public void ponyTest() {
