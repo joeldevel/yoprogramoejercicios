@@ -1,6 +1,6 @@
-package oop02c;
+package oop02d;
 
-public class Unidad {
+public abstract class Unidad {
 
     public final static double SALUD_INICIAL = 100;
     private final static double DISTANCIA_ATAQUE = 2;
@@ -37,14 +37,16 @@ public class Unidad {
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
+    
 
     public double distanciaCon(Unidad otraUnidad) {
         return this.posicion.distanciaCon(otraUnidad.getPosicion());
     }
-
+    
+    
     public boolean atacar(Unidad enemigo) {
         if (estaEnRangoDeAtaque(this.distanciaCon(enemigo), 0, Unidad.DISTANCIA_ATAQUE)) {
-            enemigo.salud -= Unidad.ATAQUE_DAMAGE;
+            enemigo.recibirDanio(Unidad.ATAQUE_DAMAGE);
             return true;
         }
         return false;
@@ -54,5 +56,8 @@ public class Unidad {
         return distanciaActual >= min && distanciaActual <= max;
     }
      // hacerun metodo para recibir danio
-    // y atacar es abstracta
+    public void recibirDanio(double cantidad) {
+        this.setSalud(this.getSalud()-cantidad);
+    }
+    
 }

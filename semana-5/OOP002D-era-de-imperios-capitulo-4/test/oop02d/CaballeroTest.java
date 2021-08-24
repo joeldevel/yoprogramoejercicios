@@ -1,5 +1,8 @@
-package oop02c;
+package oop02d;
 
+import oop02d.Posicion;
+import oop02d.Caballero;
+import oop02d.Unidad;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

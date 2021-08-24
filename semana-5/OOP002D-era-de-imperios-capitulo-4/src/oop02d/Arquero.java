@@ -1,6 +1,6 @@
-package oop02c;
+package oop02d;
 
-public class Arquero extends Unidad {
+public class Arquero extends Unidad implements Atacable {
 
     public final static double DISTANCIA_MIN_ATAQUE = 5;
     public final static double DISTANCIA_MAX_ATAQUE = 25;

@@ -1,4 +1,4 @@
-package oop02c;
+package oop02d;
 
 public class Soldado extends Unidad {
 
