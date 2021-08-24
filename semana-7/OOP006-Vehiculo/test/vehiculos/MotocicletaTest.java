@@ -31,5 +31,11 @@ public class MotocicletaTest {
         assertTrue(moto.cambiarChofer(new Chofer("camila", 10)));
         assertTrue(moto.agregarAcompaniante(new Acompaniante("pepe")));
     }
+    
+    @Test
+    public void noPuedeCambiarChoferCuandoLlevaAcompanianteTest() {
+        assertTrue(moto.agregarAcompaniante(new Acompaniante("pepe")));
+        assertFalse(moto.cambiarChofer(new Chofer("pepe", 1)));
+    }
 
 }
