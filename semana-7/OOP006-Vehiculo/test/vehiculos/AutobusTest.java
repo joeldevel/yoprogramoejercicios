@@ -27,9 +27,9 @@ public class AutobusTest {
         el60.agregarPasajero(new Pasajero("bolainas"));
         assertNotEquals(0, el60.getCantidadPasajeros());
     }
-    
+
     @Test
-    public void puedeCambiarChoferSiNoLlevaPasajeros() {
+    public void puedeCambiarChoferSiNoLlevaPasajerosTest() {
         el60.asignarChofer(new Chofer("mario", 985));
         assertEquals(0, el60.getCantidadPasajeros());
         el60.cambiarChofer(new Chofer("segismundo", 777));
@@ -37,9 +37,9 @@ public class AutobusTest {
         el60.cambiarChofer(new Chofer("el pibe cabeza", 120));
         assertEquals(0, el60.getCantidadPasajeros());
     }
-    
+
     @Test
-    public void noPuedeCambiarChoferSiLlevaPasajeros() {
+    public void noPuedeCambiarChoferSiLlevaPasajerosTest() {
         el60.asignarChofer(new Chofer("mario", 985));
         assertEquals(0, el60.getCantidadPasajeros());
         el60.agregarPasajero(new Pasajero("firulais"));
@@ -50,6 +50,15 @@ public class AutobusTest {
         assertFalse(el60.cambiarChofer(new Chofer("el pibe cabeza", 120)));
         assertNotEquals(0, el60.getCantidadPasajeros());
         assertEquals("mario", el60.getChofer().getNombre());
+    }
+
+    @Test
+    public void puedeLlenarDePasajerosTest() {
+        while (el60.getCantidadPasajeros() < Autobus.MAX_PASAJEROS) {
+            el60.agregarPasajero(new Pasajero("juan"));
+        }
+
+        assertEquals(Autobus.MAX_PASAJEROS, el60.getCantidadPasajeros());
     }
 
 }
