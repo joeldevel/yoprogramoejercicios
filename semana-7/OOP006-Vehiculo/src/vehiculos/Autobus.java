@@ -25,6 +25,10 @@ public class Autobus extends Vehiculo {
     public boolean hayPasajeros() {
         return this.contadorPasajeros > 0;
     }
+    
+    public int getCantidadPasajeros() {
+        return this.contadorPasajeros;
+    }
 
     public static final int MAX_PASAJEROS = 50;
     private Persona[] pasajeros = new Persona[MAX_PASAJEROS];
