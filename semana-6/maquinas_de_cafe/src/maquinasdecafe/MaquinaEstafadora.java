@@ -2,7 +2,7 @@ package maquinasdecafe;
 
 public class MaquinaEstafadora extends MaquinaPremium {
 
-    private boolean yaEstafe = false;
+    private boolean yaEstafe = true;
 
     @Override
     public VasoDeCafe servirCafe() {
