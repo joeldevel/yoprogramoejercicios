@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package maquinasdecafe;
 
-/**
- *
- * @author pepe
- */
-public class MaquinaDeCafe {
+
+public abstract class MaquinaDeCafe {
+    private int gramosDeCafe;
+    private static final int GRAMOS_POR_CAFE = 10;
+    private static final int CANTIDAD_INICIAL_DE_CAFE = 1000;
     
+    public MaquinaDeCafe() {
+        this.gramosDeCafe = CANTIDAD_INICIAL_DE_CAFE;
+    }
+    
+    public VasoDeCafe servirCafe() {
+        return new VasoDeCafe(true);
+    }
 }
