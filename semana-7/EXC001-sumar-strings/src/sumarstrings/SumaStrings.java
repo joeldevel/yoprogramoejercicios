@@ -9,6 +9,8 @@ public class SumaStrings {
                 suma += Double.parseDouble(s);
             } catch(Exception e) {
                 e.printStackTrace();
+            } finally {
+                System.out.println("Esto siempre se ejecuta");
             }
         }
         
